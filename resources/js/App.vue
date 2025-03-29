@@ -1,9 +1,11 @@
 <template>
-    <div>
-        <lucky-wheel></lucky-wheel>
-    </div>
+  <div id="app">
+    <router-view></router-view>
+  </div>
 </template>
 
-<script setup>
-import LuckyWheel from './components/LuckyWheel.vue';
+<script>
+export default {
+  name: 'App'
+}
 </script>
