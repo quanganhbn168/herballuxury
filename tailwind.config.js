@@ -5,12 +5,17 @@ module.exports = {
     "./resources/**/*.js",
     "./resources/**/*.vue",
     "./storage/framework/views/*.php",
+    "./app/Http/Controllers/**/*.php",
+    "./app/View/Components/**/*.php",
   ],
-  important: '#app', // Thêm dòng này để ghi đè mọi CSS
+  important: '#app', // Force Tailwind to override all styles
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['Arial', 'sans-serif'],
+      colors: {
+        primary: {
+          500: '#3B82F6',
+          600: '#2563EB',
+        },
       },
     },
   },
