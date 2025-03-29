@@ -1,14 +1,11 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./resources/**/*.blade.php",
     "./resources/**/*.js",
     "./resources/**/*.vue",
     "./storage/framework/views/*.php",
-    "./app/Http/Controllers/**/*.php",
-    "./app/View/Components/**/*.php",
   ],
-  important: '#app', // Force Tailwind to override all styles
+  important: '#app',
   theme: {
     extend: {
       colors: {

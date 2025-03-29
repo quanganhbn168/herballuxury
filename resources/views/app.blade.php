@@ -8,15 +8,6 @@
 </head>
 <body class="font-sans antialiased text-gray-900">
     <div id="app">
-        <!-- Test 1: Tailwind từ Blade -->
-  <div class="test-blade bg-red-500 text-white p-4 mb-4">
-    Test Tailwind từ Blade (phải đỏ)
-  </div>
-  
-  <!-- Test 2: Style cứng -->
-  <div style="background: red; color: white; padding: 1rem;">
-    Test CSS thủ công (phải đỏ)
-  </div>
     </div>
     
 </body>
