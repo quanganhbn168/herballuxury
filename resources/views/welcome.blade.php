@@ -1,15 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucky Wheel</title>
-    @vite(['resources/js/app.js', 'resources/css/app.css'])
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ config('app.name', 'Laravel') }}</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body>
-    <h1>Test Static</h1>
+<body class="font-sans antialiased text-gray-900">
     <div id="app">
-        <lucky-wheel></lucky-wheel>
+        <Header />
+        <main>
+            <Hero />
+            <Features />
+            <Testimonials />
+            <CTA />
+        </main>
+        <Footer />
     </div>
 </body>
 </html>
