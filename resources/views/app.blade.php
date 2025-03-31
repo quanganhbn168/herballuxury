@@ -8,7 +8,7 @@
     @vite(['resources/css/app.css','resources/css/blade.css', 'resources/js/app.js'])
 </head>
 <body>
-    <div id="app" class="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
+    <div id="app">
     </div>
 </body>
 </html>
