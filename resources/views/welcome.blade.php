@@ -6,62 +6,92 @@
     <title>Nước Giặt Xả Herbal - Giặt Sạch Tự Nhiên | TOMORDER</title>
     <meta name="description" content="Nước giặt xả Herbal chiết xuất thiên nhiên, an toàn cho da nhạy cảm. Công thức đậm đặc giặt sạch vượt trội, hương thơm dịu nhẹ. Giao hàng toàn quốc.">
     <link rel="canonical" href="https://tomorder.com/nuoc-giat-xa-herbal" />
-    
-    <link rel="stylesheet" href="{{asset('plugin/fontawesome/css/fontawesome.min.css')}}?{{time()}}">
-    <link rel="stylesheet" href="{{asset('plugin/bootstrap/css/bootstrap.min.css')}}?{{time()}}">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}?{{time()}}">
-    <link rel="stylesheet" href="{{asset('css/responsive.css')}}?{{time()}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Load file CSS đã gộp -->
+    <link rel="stylesheet" href="{{ mix('css/all.css') }}">
     <style>
         .wheel-container {
             position: relative;
-            width: 500px;
-            height: 500px;
-            margin: 50px auto;
+            width: 100%; 
+            max-width: 500px; 
+            margin: 20px auto; 
+            aspect-ratio: 1 / 1;
         }
         #wheel {
             display: block;
             width: 100%;
             height: 100%;
         }
+        /* Điều chỉnh layout trên mobile */
+        @media (max-width: 576px) {
+            #luckywheel .row {
+                flex-direction: column; /* Xếp dọc trên mobile */
+                align-items: center;
+            }
+            #luckywheel .col-sm-5,
+            #luckywheel .col-sm-7 {
+                width: 100%; /* Chiếm toàn bộ chiều rộng */
+                padding: 10px;
+            }
+            #luckywheel .col-sm-5 img {
+                max-width: 100%; /* Hình ảnh responsive */
+                height: auto;
+            }
+        }
     </style>
 </head>
 <body>
     <div id="wrapper">
         <header>
-            <div class="container">
-                <div id="header">
-                    <div class="logo">
-                        <img src="{{asset('images/static/logo-tomorder.png')}}" alt="Tomorder - Siêu thị ngày mai">
-                    </div>
-                    <nav>
-                        <ul class="menu">
-                            <li class="menu-item">
-                                <a href="#section1" class="menu-link">Trang chủ</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="#section2" class="menu-link">Về chúng tôi</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="#section3" class="menu-link">Nước giặt xả Herbal Luxury</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="#section4" class="menu-link">Tomorder - Order Hộ</a>
-                            </li>
-                            <li class="menu-item">
-                                <a href="#section5" class="menu-link">Vòng quay</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    
+    <nav class="navbar navbar-expand-md bg-body-tertiary">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="{{asset('images/static/logo-tomorder.png')}}" alt="Tomorder - Siêu thị ngày mai" style="max-height: 40px;">
+            </a>
+
+            <!-- Nút toggle cho mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                        <img src="{{asset('images/static/logo-tomorder.png')}}" alt="Tomorder - Siêu thị ngày mai" style="max-height: 30px;">
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1">
+                        <li class="nav-item">
+                            <a href="#section1" class="nav-link">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#section2" class="nav-link">Về chúng tôi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#section3" class="nav-link">Nước giặt xả Herbal Luxury</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#section4" class="nav-link">Tomorder - Order Hộ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#luckywheel" class="nav-link">Vòng quay</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </header>
+        </div>
+    </nav>
+</header>
 
         <content>
             <div id="section1" class="pt-4 mb-4">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-5 col-xs-12 order-xs-1">
+                        <div class="col-sm-5 col-xs-12 order-xs-1 animate__animated animate__fadeInLeft">
                             <h1 class="text-brand">Herbal Luxury</h1>
                             <div class="slogan">
                                 <span class="font-weight-bold">Nước giặt xả vải cao cấp</span>
@@ -77,7 +107,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-sm-7 col-xs-12 order-xs-0">
+                        <div class="col-sm-7 col-xs-12 order-xs-0 animate__animated animate__fadeInRight">
                             <img src="{{asset('images/static/main-image.png')}}" alt="Nước giặt xả Herbal Luxury">
                         </div>
                     </div>
@@ -91,7 +121,7 @@
                     <div class="aboutTomo">
                         <div class="aboutTomo-img">
                             <img src="{{asset('images/static/auboutTomorder.jpg')}}" alt="Về TomOrder">
-                            <div class="aboutTomo-des">
+                            <div class="aboutTomo-des animate__animated animate__zoomInDown">
                                 <span>
                                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus possimus temporibus ipsam dolorum sed provident, amet rerum sit dolore harum asperiores doloribus illum ullam culpa soluta dignissimos error laudantium cupiditate similique dolorem pariatur praesentium voluptatum alias! Velit, eligendi, a. Laborum ab necessitatibus eum, dolor perspiciatis animi labore ullam ut earum a architecto et consequatur, in, commodi atque est, ratione quia aspernatur reprehenderit iste eveniet. Soluta, ratione. Praesentium distinctio harum fugiat reiciendis fugit autem aperiam cum suscipit, voluptates sunt labore doloremque earum a vero, inventore quis, vel perspiciatis eveniet magnam maxime exercitationem illum numquam iure alias dolorum. Temporibus, aliquam, fugiat? Dignissimos, adipisci. Repellendus atque, eius aperiam assumenda nostrum aliquam incidunt voluptates, harum quo consectetur sapiente mollitia voluptatibus, aspernatur. Sunt facilis corrupti repellat facere, harum quae maiores atque suscipit a odit deleniti non cupiditate magni esse, molestias similique, unde. Natus esse mollitia, et a veritatis deleniti, facilis numquam, autem, expedita eos deserunt molestias quis asperiores nobis rerum non distinctio. Expedita quis sequi, quidem ut esse a quas praesentium, accusantium possimus natus, ad sapiente saepe, aperiam quibusdam voluptas enim reiciendis itaque eos libero voluptatibus laborum odit. Tempora dolorem odit quo error iure quaerat aperiam, eligendi sunt quod explicabo vitae ducimus exercitationem suscipit libero.
                                 </span>
@@ -118,7 +148,7 @@
             </div>
             <div id="section4">
                 <div class="container">
-                    <h1 class="section-title">Tomorder - Order hộ</h1>
+                    <h1 class="section-title text-center">Tomorder - Order hộ</h1>
                     <div class="section-des">
                         Ngoài dịch viêc cung cấp sỉ, lẻ các mặt hàng chất lượng, tại Tomorder chúng tôi còn cung cấp dịch vụ order hộ tại các sàn thương mại điện tử lớn của Trung Quốc như 1688, Tmall, TAOBAO,...
                     </div>
@@ -172,11 +202,11 @@ chóng và tiết kiệm chi phí
             </div>
             <div id="luckywheel">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-sm-5 col-xs-12">
-                            <img src="{{asset('images/static/wheel.png')}}" alt="Vòng quay may mắn">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-xs-12 col-sm-4 text-center">
+                            <img src="{{asset('images/static/wheel.png')}}" alt="Vòng quay may mắn" class="img-fluid">
                         </div>
-                        <div class="col-sm-7 col-xs-12">
+                        <div class="col-xs-12 col-sm-8">
                             <div class="wheel-container">
                                 <canvas id="wheel"></canvas>
                             </div>
@@ -216,7 +246,7 @@ chóng và tiết kiệm chi phí
                                 <i class="fa-solid fa-globe"></i>
                             </span>
                             <span class="footer-item">
-                                Website: https://tomo.com.vn
+                                Website: https://m.tomo.com.vn
                             </span>
                         </p>
                     </div>
@@ -273,9 +303,7 @@ chóng và tiết kiệm chi phí
             </div>              
         </footer>
     </div>
-    <script src="{{asset('plugin/jquery-3.7.1.min.js')}}?{{time()}}"></script>
-    <script src="{{asset('plugin/fontawesome/js/all.min.js')}}?{{time()}}"></script>
-    <script src="{{asset('plugin/bootstrap/js/bootstrap.bundle.min.js')}}?{{time()}}"></script>
+    <script src="{{ mix('js/all.js') }}"></script>
     <script>
         const canvas = document.getElementById('wheel');
         const ctx = canvas.getContext('2d');
